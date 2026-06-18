@@ -74,9 +74,10 @@ const demoBtn = document.querySelector(".secondary-btn");
 
 if (getStartedBtn) {
 
-    getStartedBtn.addEventListener("click", () => {
+   getStartedBtn.addEventListener("click", () => {
 
-        alert("Dashboard will be available in Phase 2 🚀");
+    window.location.href = "dashboard.html";
+
 
         /*
         Later replace with:

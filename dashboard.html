@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | PlacementPrep AI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="dashboard-navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            PlacementPrep AI
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#">DSA Tracker</a>
+            </li>
+
+            <li>
+                <a href="#">Planner</a>
+            </li>
+
+        </ul>
+
+        <button id="theme-btn">
+            🌙
+        </button>
+
+    </nav>
+
+    <!-- ================= WELCOME SECTION ================= -->
+
+    <section class="welcome">
+
+        <div class="welcome-text">
+
+            <h1>
+                Welcome Back, Aman 👋
+            </h1>
+
+            <p>
+                Track your progress and stay consistent
+                on your placement journey.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats-container">
+
+        <!-- Study Streak -->
+
+        <div class="stat-card">
+
+            <div class="icon">
+                🔥
+            </div>
+
+            <div>
+
+                <p>Study Streak</p>
+
+                <h2 id="streakCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- DSA Solved -->
+
+        <div class="stat-card">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <div>
+
+                <p>DSA Solved</p>
+
+                <h2 id="dsaCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- Tasks -->
+
+        <div class="stat-card">
+
+            <div class="icon">
+                📅
+            </div>
+
+            <div>
+
+                <p>Tasks Today</p>
+
+                <h2 id="taskCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- Readiness -->
+
+        <div class="stat-card">
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <div>
+
+                <p>Readiness</p>
+
+                <h2 id="readinessCount">
+                    0%
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DSA COUNTER ================= -->
+
+    <section class="dsa-counter">
+
+        <h2>
+            DSA Progress
+        </h2>
+
+        <div class="counter-box">
+
+            <button id="decreaseDsa">
+
+                −
+
+            </button>
+
+            <span id="dsaValue">
+
+                0
+
+            </span>
+
+            <button id="increaseDsa">
+
+                +
+
+            </button>
+
+        </div>
+
+        <p>
+            Update the number of DSA questions solved.
+        </p>
+
+    </section>    <!-- ================= TASK MANAGER ================= -->
+
+    <section class="task-manager">
+
+        <div class="section-header">
+
+            <h2>Today's Tasks</h2>
+
+        </div>
+
+        <div class="task-input-box">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+            >
+
+            <button id="addTaskBtn">
+
+                Add Task
+
+            </button>
+
+        </div>
+
+        <ul id="taskList">
+
+            <!-- Tasks will appear here -->
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= ANALYTICS ================= -->
+
+    <section class="analytics">
+
+        <div class="section-header">
+
+            <h2>Performance Analytics</h2>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="progressChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RECENT ACTIVITY ================= -->
+
+    <section class="recent-activity">
+
+        <div class="section-header">
+
+            <h2>Recent Activity</h2>
+
+        </div>
+
+        <ul id="activityList">
+
+            <li>
+                Start completing tasks to see activity.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= QUICK ACTIONS ================= -->
+
+    <section class="quick-actions">
+
+        <div class="action-card">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>DSA Tracker</h3>
+
+            <p>
+                Track coding progress.
+            </p>
+
+            <button>
+
+                Open
+
+            </button>
+
+        </div>
+
+        <div class="action-card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <h3>Notes Vault</h3>
+
+            <p>
+                Save important notes.
+            </p>
+
+            <button>
+
+                Open
+
+            </button>
+
+        </div>
+
+        <div class="action-card">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>Aptitude Quiz</h3>
+
+            <p>
+                Practice aptitude.
+            </p>
+
+            <button>
+
+                Open
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CHART.JS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- ================= DASHBOARD JS ================= -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
