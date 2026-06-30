@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planner | PlacementPrep AI</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Planner CSS -->
+
+    <link rel="stylesheet" href="css/planner.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <span>PlacementPrep AI</span>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="dsa.html">
+
+                <i class="fa-solid fa-code"></i>
+
+                DSA Tracker
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="planner.html">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                Planner
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="resume.html">
+
+                <i class="fa-solid fa-file"></i>
+
+                Resume AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="interview.html">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Interview AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="notes.html">
+
+                <i class="fa-solid fa-book"></i>
+
+                Notes
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Home
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Smart Planner 📅</h1>
+
+        <p>Plan your day and stay productive.</p>
+
+    </div>
+
+    <button id="theme-btn">
+
+        🌙
+
+    </button>
+
+</header>
+
+<!-- ================= STATS ================= -->
+
+<section class="planner-stats">
+
+    <div class="stat-card">
+
+        <h3>Today's Tasks</h3>
+
+        <h1 id="todayTasks">0</h1>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Completed</h3>
+
+        <h1 id="completedTasks">0</h1>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>Pending</h3>
+
+        <h1 id="pendingTasks">0</h1>
+
+    </div>
+
+</section>
+
+<!-- ================= TASK INPUT ================= -->
+
+<section class="task-section">
+
+    <h2>Today's Planner</h2>
+
+    <div class="task-input">
+
+        <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter today's task">
+
+        <button id="addTask">
+
+            Add Task
+
+        </button>
+
+    </div>
+
+    <ul id="taskList">
+
+    </ul>
+
+</section>
+
+<!-- ================= POMODORO ================= -->
+
+<section class="pomodoro">
+
+    <h2>Pomodoro Timer</h2>
+
+    <div class="timer">
+
+        <h1 id="timer">
+
+            25:00
+
+        </h1>
+
+    </div>
+
+    <div class="timer-buttons">
+
+        <button id="startTimer">
+
+            Start
+
+        </button>
+
+        <button id="pauseTimer">
+
+            Pause
+
+        </button>
+
+        <button id="resetTimer">
+
+            Reset
+
+        </button>
+
+    </div>
+
+</section><!-- ================= DAILY GOAL ================= -->
+
+<section class="goal-section">
+
+    <h2>🎯 Daily Goal</h2>
+
+    <div class="goal-card">
+
+        <h3>Today's Study Goal</h3>
+
+        <p>Complete 10 study tasks today.</p>
+
+        <div class="goal-progress">
+
+            <div id="goalFill"></div>
+
+        </div>
+
+        <h4 id="goalPercentage">
+
+            0% Completed
+
+        </h4>
+
+    </div>
+
+</section>
+
+<!-- ================= CALENDAR ================= -->
+
+<section class="calendar-section">
+
+    <h2>📅 Calendar</h2>
+
+    <div class="calendar-card">
+
+        <div class="calendar-header">
+
+            <button id="prevMonth">
+
+                ◀
+
+            </button>
+
+            <h3 id="monthYear">
+
+                July 2026
+
+            </h3>
+
+            <button id="nextMonth">
+
+                ▶
+
+            </button>
+
+        </div>
+
+        <div class="weekdays">
+
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+
+        </div>
+
+        <div
+        class="calendar-days"
+        id="calendarDays">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STUDY SUMMARY ================= -->
+
+<section class="summary-section">
+
+    <h2>📊 Today's Summary</h2>
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <h3>Study Time</h3>
+
+            <p>0 Hours</p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>DSA Practice</h3>
+
+            <p>0 Questions</p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <h3>Current Streak</h3>
+
+            <p>0 Days</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MOTIVATION ================= -->
+
+<section class="motivation">
+
+    <h2>💡 Quote of the Day</h2>
+
+    <blockquote>
+
+        "Small progress every day adds up to big results."
+
+    </blockquote>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>PlacementPrep AI</h2>
+
+    <p>
+
+        Stay consistent. Stay focused. Crack your dream placement.
+
+    </p>
+
+    <div class="footer-links">
+
+        <a href="dashboard.html">
+
+            Dashboard
+
+        </a>
+
+        <a href="dsa.html">
+
+            DSA Tracker
+
+        </a>
+
+        <a href="planner.html">
+
+            Planner
+
+        </a>
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 PlacementPrep AI • Built by Aman Choudhary
+
+    </p>
+
+</footer>
+
+</main>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/planner.js"></script>
+
+</body>
+</html>

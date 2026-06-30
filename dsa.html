@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DSA Tracker | PlacementPrep AI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dsa.css">
+
+</head>
+
+<body>
+
+    <!-- ===================== SIDEBAR ===================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>PlacementPrep AI</span>
+
+        </div>
+
+        <ul>
+
+            <ul>
+
+                <li>
+
+                    <a href="dashboard.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="dsa.html">
+
+                        DSA Tracker
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="planner.html">
+
+                        Planner
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="aptitude.html">
+
+                        Aptitude
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="resume.html">
+
+                        Resume AI
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="interview.html">
+
+                        Interview AI
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="notes.html">
+
+                        Notes
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <li>
+
+                <a href="planner.html">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    Planner
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="resume.html">
+
+                    <i class="fa-solid fa-file"></i>
+
+                    Resume AI
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="interview.html">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    Interview AI
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="notes.html">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Notes
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+
+    <main class="main">
+
+        <!-- ===================== TOP BAR ===================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    DSA Tracker
+
+                </h1>
+
+                <p>
+
+                    Track your coding preparation efficiently.
+
+                </p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button id="theme-btn">
+
+                    🌙
+
+                </button>
+
+                <img src="https://ui-avatars.com/api/?name=Aman" alt="Profile">
+
+            </div>
+
+        </header>
+
+        <!-- ===================== SEARCH ===================== -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input type="text" id="searchInput" placeholder="Search Question">
+
+            </div>
+
+        </section>
+
+        <!-- ===================== FILTERS ===================== -->
+
+        <section class="filters">
+
+            <select id="topicFilter">
+
+                <option value="All">
+
+                    All Topics
+
+                </option>
+
+                <option>
+
+                    Arrays
+
+                </option>
+
+                <option>
+
+                    Strings
+
+                </option>
+
+                <option>
+
+                    Linked List
+
+                </option>
+
+                <option>
+
+                    Stack
+
+                </option>
+
+                <option>
+
+                    Queue
+
+                </option>
+
+                <option>
+
+                    Trees
+
+                </option>
+
+                <option>
+
+                    Graphs
+
+                </option>
+
+                <option>
+
+                    Dynamic Programming
+
+                </option>
+
+            </select>
+
+            <select id="difficultyFilter">
+
+                <option value="All">
+
+                    All Difficulty
+
+                </option>
+
+                <option>
+
+                    Easy
+
+                </option>
+
+                <option>
+
+                    Medium
+
+                </option>
+
+                <option>
+
+                    Hard
+
+                </option>
+
+            </select>
+
+        </section>
+
+        <!-- ===================== PROGRESS ===================== -->
+
+        <section class="progress-section">
+
+            <div class="progress-card">
+
+                <h3>
+
+                    Solved
+
+                </h3>
+
+                <h1 id="solvedCount">
+
+                    0
+
+                </h1>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>
+
+                    Remaining
+
+                </h3>
+
+                <h1 id="remainingCount">
+
+                    150
+
+                </h1>
+
+            </div>
+
+            <div class="progress-card">
+
+                <h3>
+
+                    Completion
+
+                </h3>
+
+                <h1 id="percentage">
+
+                    0%
+
+                </h1>
+
+            </div>
+
+        </section>
+
+        <!-- ===================== PROGRESS BAR ===================== -->
+
+        <section class="progress-container">
+
+            <div class="progress-bar">
+
+                <div id="progressFill">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================== QUESTION LIST ===================== -->
+
+        <section class="question-container" id="questionContainer">
+
+            <!-- Questions will come from JavaScript -->
+
+        </section> <!-- ================= QUICK STATS ================= -->
+
+        <section class="quick-stats">
+
+            <div class="quick-card">
+
+                <i class="fa-solid fa-fire"></i>
+
+                <h3>Current Streak</h3>
+
+                <p id="currentStreak">0 Days</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                <h3>Best Streak</h3>
+
+                <p id="bestStreak">0 Days</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Today's Goal</h3>
+
+                <p>5 Questions</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                <h3>Weekly Goal</h3>
+
+                <p>35 Questions</p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= COMPANY PREPARATION ================= -->
+
+        <section class="company-section">
+
+            <h2>Top Company Preparation</h2>
+
+            <div class="company-grid">
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/google" alt="Google">
+                    <h4>Google</h4>
+                    <span>150 Questions</span>
+                </div>
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/microsoft" alt="Microsoft">
+                    <h4>Microsoft</h4>
+                    <span>120 Questions</span>
+                </div>
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/amazon" alt="Amazon">
+                    <h4>Amazon</h4>
+                    <span>180 Questions</span>
+                </div>
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/meta" alt="Meta">
+                    <h4>Meta</h4>
+                    <span>140 Questions</span>
+                </div>
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/netflix" alt="Netflix">
+                    <h4>Netflix</h4>
+                    <span>90 Questions</span>
+                </div>
+
+                <div class="company-card">
+                    <img src="https://cdn.simpleicons.org/adobe" alt="Adobe">
+                    <h4>Adobe</h4>
+                    <span>100 Questions</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= DAILY MOTIVATION ================= -->
+
+        <section class="motivation">
+
+            <h2>💡 Daily Motivation</h2>
+
+            <blockquote id="quote">
+
+                "Success doesn't come from what you do occasionally.
+                It comes from what you do consistently."
+
+            </blockquote>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <h2>PlacementPrep AI</h2>
+
+            <p>
+
+                Build your coding consistency one problem at a time.
+
+            </p>
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="planner.html">Planner</a>
+
+                <a href="resume.html">Resume AI</a>
+
+                <a href="interview.html">Interview AI</a>
+
+            </div>
+
+            <p class="copyright">
+
+                © 2026 PlacementPrep AI • Built by Aman Choudhary
+
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+
+    <script src="js/dsa.js"></script>
+
+</body>
+
+</html>

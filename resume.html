@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume AI | PlacementPrep AI</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Resume CSS -->
+
+    <link rel="stylesheet" href="css/resume.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <span>PlacementPrep AI</span>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="dsa.html">
+
+                <i class="fa-solid fa-code"></i>
+
+                DSA Tracker
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="planner.html">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                Planner
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="resume.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Resume AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="interview.html">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Interview AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="notes.html">
+
+                <i class="fa-solid fa-book"></i>
+
+                Notes
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Home
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOP BAR ================= -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Resume AI 📄</h1>
+
+        <p>
+
+            Upload your resume and improve your placement chances.
+
+        </p>
+
+    </div>
+
+    <button id="theme-btn">
+
+        🌙
+
+    </button>
+
+</header>
+
+<!-- ================= UPLOAD ================= -->
+
+<section class="upload-section">
+
+    <div class="upload-card">
+
+        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+        <h2>Upload Resume</h2>
+
+        <p>
+
+            Supported Formats: PDF, DOC, DOCX
+
+        </p>
+
+        <input
+        type="file"
+        id="resumeFile"
+        accept=".pdf,.doc,.docx">
+
+        <button id="analyzeBtn">
+
+            Analyze Resume
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= ATS SCORE ================= -->
+
+<section class="ats-section">
+
+    <div class="ats-card">
+
+        <h2>ATS Score</h2>
+
+        <div class="score-circle">
+
+            <h1 id="atsScore">
+
+                0%
+
+            </h1>
+
+        </div>
+
+        <div class="progress">
+
+            <div id="atsProgress">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DETECTED SKILLS ================= -->
+
+<section class="skills-section">
+
+    <div class="skills-card">
+
+        <h2>
+
+            <i class="fa-solid fa-check-circle"></i>
+
+            Detected Skills
+
+        </h2>
+
+        <div id="detectedSkills" class="skill-list">
+
+            <span>Upload Resume</span>
+
+        </div>
+
+    </div>
+
+    <div class="skills-card">
+
+        <h2>
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            Missing Skills
+
+        </h2>
+
+        <div id="missingSkills" class="skill-list">
+
+            <span>Waiting...</span>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= AI SUGGESTIONS ================= -->
+
+<section class="suggestions-section">
+
+    <div class="suggestion-card">
+
+        <h2>
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            AI Suggestions
+
+        </h2>
+
+        <ul id="suggestionList">
+
+            <li>Upload your resume to generate suggestions.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ================= RESUME STRENGTH ================= -->
+
+<section class="strength-section">
+
+    <div class="strength-card">
+
+        <h2>
+
+            Resume Strength
+
+        </h2>
+
+        <div class="strength-bar">
+
+            <div id="strengthFill">
+
+            </div>
+
+        </div>
+
+        <p id="strengthText">
+
+            Waiting for analysis...
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= RECRUITER CHECKLIST ================= -->
+
+<section class="checklist-section">
+
+    <div class="checklist-card">
+
+        <h2>
+
+            Recruiter Checklist
+
+        </h2>
+
+        <ul id="checkList">
+
+            <li>⬜ Resume uploaded</li>
+
+            <li>⬜ Skills identified</li>
+
+            <li>⬜ ATS score calculated</li>
+
+            <li>⬜ Missing skills analyzed</li>
+
+            <li>⬜ Suggestions generated</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ================= ACTION BUTTONS ================= -->
+
+<section class="action-section">
+
+    <button id="downloadReport">
+
+        <i class="fa-solid fa-download"></i>
+
+        Download Report
+
+    </button>
+
+    <button id="resetResume">
+
+        <i class="fa-solid fa-rotate-left"></i>
+
+        Reset
+
+    </button>
+
+</section>
+
+<!-- ================= INFO CARDS ================= -->
+
+<section class="info-grid">
+
+    <div class="info-card">
+
+        <i class="fa-solid fa-file-circle-check"></i>
+
+        <h3>ATS Friendly</h3>
+
+        <p>
+
+            Improve your resume for applicant tracking systems.
+
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <i class="fa-solid fa-user-check"></i>
+
+        <h3>Recruiter Ready</h3>
+
+        <p>
+
+            Increase the chances of getting shortlisted.
+
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h3>Skill Analysis</h3>
+
+        <p>
+
+            Compare your skills with industry requirements.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+
+        PlacementPrep AI
+
+    </h2>
+
+    <p>
+
+        AI-powered placement preparation platform.
+
+    </p>
+
+    <div class="footer-links">
+
+        <a href="dashboard.html">
+
+            Dashboard
+
+        </a>
+
+        <a href="dsa.html">
+
+            DSA Tracker
+
+        </a>
+
+        <a href="planner.html">
+
+            Planner
+
+        </a>
+
+        <a href="resume.html">
+
+            Resume AI
+
+        </a>
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 PlacementPrep AI • Built by Aman Choudhary
+
+    </p>
+
+</footer>
+
+</main>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/resume.js"></script>
+
+</body>
+
+</html>

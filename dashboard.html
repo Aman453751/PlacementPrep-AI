@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | PlacementPrep AI</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="css/dashboard.css">
@@ -30,19 +31,83 @@
         <ul class="nav-links">
 
             <li>
-                <a href="index.html">Home</a>
+
+                <a href="index.html">
+
+                    Home
+
+                </a>
+
             </li>
 
             <li>
-                <a href="#">Dashboard</a>
+
+                <a href="dashboard.html">
+
+                    Dashboard
+
+                </a>
+
             </li>
 
             <li>
-                <a href="#">DSA Tracker</a>
+
+                <a href="dsa.html">
+
+                    DSA Tracker
+
+                </a>
+
             </li>
 
             <li>
-                <a href="#">Planner</a>
+
+                <a href="planner.html">
+
+                    Planner
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="aptitude.html">
+
+                    Aptitude
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="resume.html">
+
+                    Resume AI
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="interview.html">
+
+                    Interview AI
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="notes.html">
+
+                    Notes
+
+                </a>
+
             </li>
 
         </ul>
@@ -192,7 +257,7 @@
             Update the number of DSA questions solved.
         </p>
 
-    </section>    <!-- ================= TASK MANAGER ================= -->
+    </section> <!-- ================= TASK MANAGER ================= -->
 
     <section class="task-manager">
 
@@ -204,11 +269,7 @@
 
         <div class="task-input-box">
 
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter a task..."
-            >
+            <input type="text" id="taskInput" placeholder="Enter a task...">
 
             <button id="addTaskBtn">
 
@@ -281,9 +342,9 @@
                 Track coding progress.
             </p>
 
-            <button>
+            <button onclick="window.location.href='dsa.html'">
 
-                Open
+                Open Tracker
 
             </button>
 
@@ -299,9 +360,9 @@
                 Save important notes.
             </p>
 
-            <button>
+            <button onclick="window.location.href='notes.html'">
 
-                Open
+                Open Notes
 
             </button>
 
@@ -317,9 +378,9 @@
                 Practice aptitude.
             </p>
 
-            <button>
+            <button onclick="window.location.href='aptitude.html'">
 
-                Open
+                Start Quiz
 
             </button>
 
@@ -338,4 +399,5 @@
     <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>

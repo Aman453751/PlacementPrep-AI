@@ -74,16 +74,9 @@ const demoBtn = document.querySelector(".secondary-btn");
 
 if (getStartedBtn) {
 
-   getStartedBtn.addEventListener("click", () => {
-
-    window.location.href = "dashboard.html";
-
-
-        /*
-        Later replace with:
+    getStartedBtn.addEventListener("click", () => {
 
         window.location.href = "dashboard.html";
-        */
 
     });
 
@@ -93,7 +86,7 @@ if (demoBtn) {
 
     demoBtn.addEventListener("click", () => {
 
-        alert("Demo video coming soon 🎥");
+        window.location.href = "dsa.html";
 
     });
 
