@@ -1,26 +1,687 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-<title>Coming Soon</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aptitude Quiz | PlacementPrep AI</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/aptitude.css">
 
 </head>
 
 <body>
 
-<h1>
+<!-- ================= SIDEBAR ================= -->
 
-Coming Soon 🚀
+<aside class="sidebar">
 
-</h1>
+    <div class="logo">
 
-<a href="dashboard.html">
+        <i class="fa-solid fa-graduation-cap"></i>
 
-Back Dashboard
+        <span>PlacementPrep AI</span>
 
-</a>
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="dsa.html">
+
+                <i class="fa-solid fa-code"></i>
+
+                DSA Tracker
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="planner.html">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                Planner
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="resume.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Resume AI
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="interview.html">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Interview AI
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="aptitude.html">
+
+                <i class="fa-solid fa-brain"></i>
+
+                Aptitude Quiz
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Home
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Aptitude Quiz 🧠</h1>
+
+        <p>
+
+            Practice aptitude questions for placements.
+
+        </p>
+
+    </div>
+
+    <button id="theme-btn">
+
+        🌙
+
+    </button>
+
+</header>
+
+<!-- ================= QUIZ SETTINGS ================= -->
+
+<section class="quiz-settings">
+
+    <div class="settings-card">
+
+        <h2>
+
+            Start Your Quiz
+
+        </h2>
+
+        <div class="form-group">
+
+            <label>
+
+                Category
+
+            </label>
+
+            <select id="category">
+
+                <option>Quantitative Aptitude</option>
+
+                <option>Logical Reasoning</option>
+
+                <option>Verbal Ability</option>
+
+                <option>Data Interpretation</option>
+
+                <option>Mixed</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Difficulty
+
+            </label>
+
+            <select id="difficulty">
+
+                <option>Easy</option>
+
+                <option>Medium</option>
+
+                <option>Hard</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Number of Questions
+
+            </label>
+
+            <select id="questionCount">
+
+                <option>10</option>
+
+                <option>20</option>
+
+                <option>30</option>
+
+            </select>
+
+        </div>
+
+        <button id="startQuiz">
+
+            Start Quiz
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= QUIZ INFO ================= -->
+
+<section class="quiz-info">
+
+    <div class="info-card">
+
+        <h3>
+
+            Time Left
+
+        </h3>
+
+        <h2 id="timer">
+
+            30:00
+
+        </h2>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>
+
+            Question
+
+        </h3>
+
+        <h2 id="questionNumber">
+
+            0 / 0
+
+        </h2>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>
+
+            Score
+
+        </h3>
+
+        <h2 id="liveScore">
+
+            0
+
+        </h2>
+
+    </div>
+
+</section>
+
+<!-- ================= QUESTION CARD ================= -->
+
+<section class="question-section">
+
+    <div class="question-card">
+
+        <h2>
+
+            Question
+
+        </h2>
+
+        <p id="questionText">
+
+            Click "Start Quiz" to begin.
+
+        </p>
+
+        <div id="optionsContainer">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= BUTTONS ================= -->
+
+<section class="quiz-buttons">
+
+    <button id="previousBtn">
+
+        Previous
+
+    </button>
+
+    <button id="nextBtn">
+
+        Next
+
+    </button>
+
+    <button id="submitQuiz">
+
+        Submit Quiz
+
+    </button>
+
+</section><!-- ================= RESULT SECTION ================= -->
+
+<section class="result-section">
+
+    <div class="result-card">
+
+        <h2>
+
+            Quiz Result
+
+        </h2>
+
+        <div class="result-circle">
+
+            <h1 id="finalScore">
+
+                0%
+
+            </h1>
+
+        </div>
+
+        <div class="result-progress">
+
+            <div id="resultProgress">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PERFORMANCE ANALYSIS ================= -->
+
+<section class="analysis-section">
+
+    <div class="analysis-card">
+
+        <h2>
+
+            Performance Analysis
+
+        </h2>
+
+        <div class="analysis-grid">
+
+            <div class="analysis-box">
+
+                <h3>
+
+                    Correct
+
+                </h3>
+
+                <p id="correctAnswers">
+
+                    0
+
+                </p>
+
+            </div>
+
+            <div class="analysis-box">
+
+                <h3>
+
+                    Wrong
+
+                </h3>
+
+                <p id="wrongAnswers">
+
+                    0
+
+                </p>
+
+            </div>
+
+            <div class="analysis-box">
+
+                <h3>
+
+                    Accuracy
+
+                </h3>
+
+                <p id="accuracy">
+
+                    0%
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= LEADERBOARD ================= -->
+
+<section class="leaderboard-section">
+
+    <div class="leaderboard-card">
+
+        <h2>
+
+            Leaderboard
+
+        </h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+
+                    <th>Name</th>
+
+                    <th>Score</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="leaderboardTable">
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>Aman</td>
+
+                    <td>95%</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>Rahul</td>
+
+                    <td>90%</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>Ankit</td>
+
+                    <td>88%</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- ================= IMPROVEMENT TIPS ================= -->
+
+<section class="tips-section">
+
+    <div class="tips-card">
+
+        <h2>
+
+            Improvement Tips
+
+        </h2>
+
+        <ul id="tipsList">
+
+            <li>
+
+                Complete the quiz to receive personalized tips.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-list-check"></i>
+
+        <h3>
+
+            Quizzes Taken
+
+        </h3>
+
+        <p id="quizCount">
+
+            0
+
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h3>
+
+            Average Score
+
+        </h3>
+
+        <p id="averageQuizScore">
+
+            0%
+
+        </p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-trophy"></i>
+
+        <h3>
+
+            Best Score
+
+        </h3>
+
+        <p id="bestQuizScore">
+
+            0%
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+
+        PlacementPrep AI
+
+    </h2>
+
+    <p>
+
+        Practice • Learn • Crack Your Dream Placement
+
+    </p>
+
+    <div class="footer-links">
+
+        <a href="dashboard.html">
+
+            Dashboard
+
+        </a>
+
+        <a href="dsa.html">
+
+            DSA Tracker
+
+        </a>
+
+        <a href="planner.html">
+
+            Planner
+
+        </a>
+
+        <a href="resume.html">
+
+            Resume AI
+
+        </a>
+
+        <a href="interview.html">
+
+            Interview AI
+
+        </a>
+
+        <a href="aptitude.html">
+
+            Aptitude
+
+        </a>
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 PlacementPrep AI • Built by Aman Choudhary
+
+    </p>
+
+</footer>
+
+</main>
+
+<!-- ================= QUESTIONS DATABASE ================= -->
+
+<script src="data/questions.js"></script>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/aptitude.js"></script>
 
 </body>
 
